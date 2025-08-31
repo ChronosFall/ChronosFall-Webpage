@@ -4,11 +4,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 body {
     margin: 0;
     padding: 0;
+    color: #FFFFFF;
+    overflow:hidden;
 }
 
 .header {
@@ -56,10 +59,20 @@ body {
 
 .news {
     margin-top: 50px;
-    background-color: #f0f0f0;
     display: flex;
     justify-content: center;
-    font-size: 2em;
+}
+
+.newsTitle {
+    position: relative;
+    top: 10px;
+    font-size: 3.5em;
     font-weight: bold;
     color: #333;
+}
+
+.news img {
+    width: 10%;
+    height: 10%;
+    position: relative;
 }

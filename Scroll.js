@@ -4,36 +4,25 @@ window.addEventListener('wheel', function (e) {
     if (isScrolling) return;
 
     isScrolling = true;
+    PageSize = 1100; // 1ページの高さを設定
 
     if (e.deltaY > 0) {
         // 下スクロール
-       // nextSection();
+        NextPage();
     } else {
         // 上スクロール
-       // prevSection();
+        PrevPage();
     }
     console.log(e.deltaY);
 
     setTimeout(() => isScrolling = false, 100);
 });
 
-function nextSection() {
-    const currentSection = document.querySelector('.section.active');
-    const nextSection = currentSection.nextElementSibling;
 
-    if (nextSection) {
-        currentSection.classList.remove('active');
-        nextSection.classList.add('active');
-        nextSection.scrollIntoView({ behavior: 'smooth' });
-    }
+function NextPage() {
+    scrollBy(0, PageSize);
 }
-function prevSection() {
-    const currentSection = document.querySelector('.section.active');
-    const prevSection = currentSection.previousElementSibling;
 
-    if (prevSection) {
-        currentSection.classList.remove('active');
-        prevSection.classList.add('active');
-        prevSection.scrollIntoView({ behavior: 'smooth' });
-    }
+function PrevPage() {
+    scrollBy(0, -PageSize);
 }
