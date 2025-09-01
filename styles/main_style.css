@@ -71,8 +71,12 @@ body {
     color: #333;
 }
 
-.news img {
+.news_container {
+    display: flex;
     width: 10%;
     height: 10%;
-    position: relative;
+    position: absolute;
+    text-align: left;
+    float: left;
+     justify-content: center;
 }
