@@ -1,258 +1,258 @@
+/* リセットCSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* リセットCSS */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    color: #FFFFFF;
+}
 
-        html,
-        body {
-            height: 100%;
-            overflow: hidden;
-            font-family: 'Arial', sans-serif;
-            color: #FFFFFF;
-        }
+/* コンテナ全体 */
+.container {
+    height: 100vh;
+    position: relative;
+}
 
-        /* コンテナ全体 */
-        .container {
-            height: 100vh;
-            position: relative;
-        }
+/* ヘッダー */
+.header {
+    background: linear-gradient(0deg, rgba(247, 247, 247, 0.5) 0%, rgba(0, 0, 0, 0.9) 100%);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 80px;
+    min-height: 60px;
+}
 
-        /* ヘッダー */
-        .header {
-            background: linear-gradient(0deg, rgba(247, 247, 247, 0.5) 0%, rgba(0, 0, 0, 0.9) 100%);
-            padding: 1rem 2rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            height: 80px;
-            min-height: 60px;
-        }
+.header .logo {
+    max-height: 100px;
+    width: auto;
+}
 
-        .header .logo {
-            max-height: 40px;
-            width: auto;
-        }
+.header nav {
+    display: flex;
+    gap: 2rem;
+}
 
-        .header nav {
-            display: flex;
-            gap: 2rem;
-        }
+.header nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
 
-        .header nav a {
-            color: #FFFFFF;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1rem;
-            transition: color 0.3s ease;
-        }
+.header nav a:hover {
+    color: #4CAF50;
+}
 
-        .header nav a:hover {
-            color: #4CAF50;
-        }
+/* セクション全体のコンテナ */
+.sections-container {
+    height: 100vh;
+    position: relative;
+    top: 0;
+    transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
 
-        /* セクション全体のコンテナ */
-        .sections-container {
-            height: 100vh;
-            position: relative;
-            top: 0;
-            transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
-        }
+/* 各セクション */
+.section {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
-        /* 各セクション */
-        .section {
-            height: 100vh;
-            width: 100%;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
+/* トップセクション */
+.top {
+    background-image: url('../img/top/tmp.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
-        /* トップセクション */
-        .top {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            position: relative;
-            overflow: hidden;
-        }
+.top-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+}
 
-        .top-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            z-index: 1;
-        }
+.top-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 
-        .top-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
+.top h1 {
+    font-size: clamp(2rem, 8vw, 6rem);
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
 
-        .top h1 {
-            font-size: clamp(2rem, 8vw, 6rem);
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
+/* ニュースセクション */
+.news {
+    background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
+    padding: 2rem;
+}
 
-        /* ニュースセクション */
-        .news {
-            background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
-            padding: 2rem;
-        }
+.newsTitle {
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 2rem;
+}
 
-        .newsTitle {
-            font-size: clamp(2rem, 6vw, 4rem);
-            font-weight: bold;
-            color: #FFFFFF;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
+.news_container {
+    width: 100%;
+    max-width: 800px;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
 
-        .news_container {
-            width: 100%;
-            max-width: 800px;
-            height: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-        }
+.news_container img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 10px;
+}
 
-        .news_container img {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-            border-radius: 10px;
-        }
+/* キャラクターセクション */
+.characters {
+    background: linear-gradient(135deg, #8360c3 0%, #2ebf91 100%);
+    text-align: center;
+    padding: 2rem;
+}
 
-        /* キャラクターセクション */
-        .characters {
-            background: linear-gradient(135deg, #8360c3 0%, #2ebf91 100%);
-            text-align: center;
-            padding: 2rem;
-        }
+.characters h2 {
+    font-size: clamp(2rem, 6vw, 4rem);
+    margin-bottom: 2rem;
+}
 
-        .characters h2 {
-            font-size: clamp(2rem, 6vw, 4rem);
-            margin-bottom: 2rem;
-        }
+/* 情報セクション */
+.information {
+    background: linear-gradient(135deg, #FC466B 0%, #3F5EFB 100%);
+    text-align: center;
+    padding: 2rem;
+}
 
-        /* 情報セクション */
-        .information {
-            background: linear-gradient(135deg, #FC466B 0%, #3F5EFB 100%);
-            text-align: center;
-            padding: 2rem;
-        }
+.information h2 {
+    font-size: clamp(2rem, 6vw, 4rem);
+    margin-bottom: 2rem;
+}
 
-        .information h2 {
-            font-size: clamp(2rem, 6vw, 4rem);
-            margin-bottom: 2rem;
-        }
+/* ワールドセクション */
+.world {
+    background: linear-gradient(135deg, #FDBB2D 0%, #22C1C3 100%);
+    text-align: center;
+    padding: 2rem;
+}
 
-        /* ワールドセクション */
-        .world {
-            background: linear-gradient(135deg, #FDBB2D 0%, #22C1C3 100%);
-            text-align: center;
-            padding: 2rem;
-        }
+.world h2 {
+    font-size: clamp(2rem, 6vw, 4rem);
+    margin-bottom: 2rem;
+}
 
-        .world h2 {
-            font-size: clamp(2rem, 6vw, 4rem);
-            margin-bottom: 2rem;
-        }
+/* スクロールインジケーター */
+.scroll-indicator {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-        /* スクロールインジケーター */
-        .scroll-indicator {
-            position: fixed;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+.scroll-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
 
-        .scroll-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
+.scroll-dot.active {
+    background: #FFFFFF;
+    transform: scale(1.2);
+}
 
-        .scroll-dot.active {
-            background: #FFFFFF;
-            transform: scale(1.2);
-        }
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .header {
+        padding: 0.5rem 1rem;
+        height: 60px;
+    }
 
-        /* レスポンシブ対応 */
-        @media (max-width: 768px) {
-            .header {
-                padding: 0.5rem 1rem;
-                height: 60px;
-            }
+    .header nav {
+        gap: 1rem;
+    }
 
-            .header nav {
-                gap: 1rem;
-            }
+    .header nav a {
+        font-size: 0.9rem;
+    }
 
-            .header nav a {
-                font-size: 0.9rem;
-            }
+    .header .logo {
+        max-height: 100px;
+    }
 
-            .header .logo {
-                max-height: 30px;
-            }
+    .scroll-indicator {
+        right: 10px;
+    }
 
-            .scroll-indicator {
-                right: 10px;
-            }
+    .scroll-dot {
+        width: 10px;
+        height: 10px;
+    }
+}
 
-            .scroll-dot {
-                width: 10px;
-                height: 10px;
-            }
-        }
+@media (max-width: 480px) {
+    .header nav {
+        gap: 0.5rem;
+    }
 
-        @media (max-width: 480px) {
-            .header nav {
-                gap: 0.5rem;
-            }
+    .header nav a {
+        font-size: 0.8rem;
+    }
+}
 
-            .header nav a {
-                font-size: 0.8rem;
-            }
-        }
-
-        /* ロード画面のためのプレースホルダー */
-        .placeholder-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(45deg, #333, #555);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            border-radius: 10px;
-        }
+/* ロード画面のためのプレースホルダー */
+.placeholder-image {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(45deg, #333, #555);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 10px;
+}
