@@ -16,7 +16,6 @@ body {
 
 .header {
     background: linear-gradient(0deg, #f7f7f779 0%, #000000e6 100%);
-    padding: 20px 0 30px 0;
     font-family: 'Arial', sans-serif;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
