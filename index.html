@@ -1,64 +1,76 @@
-<html>
+<!DOCTYPE html>
+<html lang="ja">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChronosFall - Home Page</title>
-    <!--メインのスタイルを適用-->
     <link rel="stylesheet" href="styles/main_style.css">
-    <!--フォント-->
-    <link rel="stylesheet" href="styles/chronos_font.css">
 </head>
 
 <body>
-    <!--コンテナ-->
     <div class="container">
-        <!--ヘッダー部分-->
-        <header>
-            <div class="header">
-                <a href="">
-                    <img src="img\TitleLogo.png" alt="" class="logo">
-                </a>
-                <!--ナビゲーションリンク-->
-                <nav>
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="contact.html">Contact</a>
-                </nav>
-            </div>
+        <!-- ヘッダー -->
+        <header class="header">
+            <a href="index.html">
+                <img src="img/TitleLogo.png" alt="ChronosFall Logo" class="logo">
+            </a>
+            <nav>
+                <!--todo:アンカーリンクの追加-->
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+            </nav>
         </header>
-        <!--メインコンテンツ-->
-        <main>
-            <!--トップ画面-->
-            <div class="top section">
-                <img src="img/top/tmp.png" alt="tmp image" class="top-image">
-            </div>
-            <!--最新情報(ニュース)-->
-            <div class="news section">
-                <h2 class="newsTitle">ニュース</h2>
-                <div class="news_container">
-                    <img src="img/news/screen.png" alt="">
+
+        <!-- スクロールインジケーター -->
+        <div class="scroll-indicator">
+            <div class="scroll-dot active" data-section="0"></div>
+            <div class="scroll-dot" data-section="1"></div>
+            <div class="scroll-dot" data-section="2"></div>
+            <div class="scroll-dot" data-section="3"></div>
+            <div class="scroll-dot" data-section="4"></div>
+        </div>
+
+        <!--ローディング画面-->
+        <div class="loading-screen"></div>
+        <!-- メインセクション -->
+        <div class="sections-container">
+            <!-- トップ画面 -->
+            <div class="section top">
+                <div class="top-content">
+                    <h1>ChronosFall</h1>
+                    <p>時を超えた冒険が始まる</p>
                 </div>
             </div>
-            <!--キャラクター説明-->
-            <div class="characters section">
-            </div>
-            <!--情報(世界観説明みたいな)-->
-            <div class="informatio section">
 
+            <!-- ニュースセクション -->
+            <div class="section news">
+                <h2 class="newsTitle">ニュース</h2>
+                <div class="news_container">
+                    <div class="placeholder-image">最新情報をここに表示</div>
+                </div>
             </div>
-            <!--ワールド-->
-            <div class="world section">
 
+            <!-- キャラクターセクション -->
+            <div class="section characters">
+                <h2>キャラクター</h2>
+                <div class="placeholder-image">キャラクター情報をここに表示</div>
             </div>
-            <!--フッター-->
-            <div class="footer">
-                <!--<p>&copy; 2025 ChronosFall. All rights reserved.</p>-->
+
+            <!-- 情報セクション -->
+            <div class="section information">
+                <h2>世界観</h2>
+                <div class="placeholder-image">世界観の説明をここに表示</div>
             </div>
-            <div class="scripts">
-                <script src="Scroll.js"></script>
+
+            <!-- ワールドセクション -->
+            <div class="section world">
+                <h2>ワールド</h2>
+                <div class="placeholder-image">ワールド情報をここに表示</div>
             </div>
-        </main>
+        </div>
     </div>
+    <script src="Scroll.js"></script>
 </body>
 
 </html>
