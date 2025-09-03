@@ -1,4 +1,3 @@
-
 class ResponsiveSlideshow {
     constructor() {
         this.currentSection = 0;
@@ -7,11 +6,22 @@ class ResponsiveSlideshow {
         this.sectionsContainer = document.querySelector('.sections-container');
         this.scrollDots = document.querySelectorAll('.scroll-dot');
 
+        // セクション名とインデックスのマッピング
+        this.sectionMap = {
+            '': 0,
+            'main': 0,
+            'news': 1,
+            'characters': 2,
+            'information': 3,
+            'world': 4
+        };
+
         this.init();
     }
 
     init() {
         this.bindEvents();
+        this.handleInitialHash();
         this.updateIndicator();
     }
 
@@ -48,6 +58,26 @@ class ResponsiveSlideshow {
 
         // リサイズイベント
         window.addEventListener('resize', () => this.handleResize());
+
+        // ハッシュ変更イベント
+        window.addEventListener('hashchange', () => this.handleHashChange());
+
+        // ページ読み込み時のスクロール位置をリセット
+        window.addEventListener('load', () => {
+            window.scrollTo(0, 0);
+            this.handleInitialHash();
+        });
+
+        // ヘッダーのロゴクリック時の処理
+        const mainLink = document.getElementById('Main');
+        if (mainLink) {
+            mainLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.goToSection(0);
+                // URLのハッシュも更新
+                window.history.pushState(null, null, '#main');
+            });
+        }
     }
 
     handleWheel(e) {
@@ -90,6 +120,7 @@ class ResponsiveSlideshow {
         if (this.currentSection < this.totalSections - 1) {
             this.currentSection++;
             this.updateView();
+            this.updateURL();
         }
     }
 
@@ -97,6 +128,7 @@ class ResponsiveSlideshow {
         if (this.currentSection > 0) {
             this.currentSection--;
             this.updateView();
+            this.updateURL();
         }
     }
 
@@ -104,6 +136,7 @@ class ResponsiveSlideshow {
         if (index >= 0 && index < this.totalSections && index !== this.currentSection) {
             this.currentSection = index;
             this.updateView();
+            this.updateURL();
         }
     }
 
@@ -132,8 +165,48 @@ class ResponsiveSlideshow {
     }
 
     handleResize() {
-        // リサイズ時の調整が必要な場合はここに実装
+        // リサイズ時の調整
+        window.scrollTo(0, 0); // スクロール位置をリセット
         this.updateView();
+    }
+
+    // 初期ハッシュ処理
+    handleInitialHash() {
+        const hash = window.location.hash.substring(1);
+        const sectionIndex = this.sectionMap[hash];
+
+        if (sectionIndex !== undefined) {
+            this.currentSection = sectionIndex;
+            this.updateView();
+        }
+
+        // 通常のスクロールを防ぐ
+        setTimeout(() => {
+            window.scrollTo(0, 0);
+        }, 0);
+    }
+
+    // ハッシュ変更時の処理
+    handleHashChange() {
+        const hash = window.location.hash.substring(1);
+        const sectionIndex = this.sectionMap[hash];
+
+        if (sectionIndex !== undefined) {
+            this.currentSection = sectionIndex;
+            this.updateView();
+        }
+
+        // 通常のスクロールを防ぐ
+        window.scrollTo(0, 0);
+    }
+
+    // URLハッシュを更新
+    updateURL() {
+        const sectionNames = ['main', 'news', 'characters', 'information', 'world'];
+        const sectionName = sectionNames[this.currentSection];
+
+        // ハッシュ変更イベントを発生させずにURLを更新
+        window.history.replaceState(null, null, `#${sectionName}`);
     }
 }
 
